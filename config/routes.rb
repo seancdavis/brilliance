@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   #
   # ------------------------------------------ Home Page
 
-  root :to => 'home#index'
+  root :to => 'ideas#index'
 
 end

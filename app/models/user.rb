@@ -15,6 +15,7 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime
 #  updated_at             :datetime
+#  is_admin               :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -26,8 +27,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
          :validatable
 
+  # ------------------------------------------ Instance Methods
+
   def to_s
     email
+  end
+
+  def admin?
+    is_admin?
   end
 
 end

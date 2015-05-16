@@ -15,6 +15,7 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime
 #  updated_at             :datetime
+#  is_admin               :boolean          default(FALSE)
 #
 
 require 'rails_helper'
