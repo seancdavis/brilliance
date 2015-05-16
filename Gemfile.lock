@@ -537,6 +537,9 @@ GEM
     wirb (2.0.0)
       paint (>= 0.9, < 2.0)
     yajl-ruby (1.2.1)
+    yaml_db (0.3.0)
+      rails (>= 3.0, < 4.3)
+      rake (>= 0.8.7)
 
 PLATFORMS
   ruby
@@ -573,3 +576,4 @@ DEPENDENCIES
   uglifier
   unicorn-rails
   wirb
+  yaml_db

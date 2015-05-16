@@ -39,6 +39,7 @@ gem 'cambium'
 gem 'paper_trail'
 gem 'pg_search'
 gem 'mark_it_zero'
+gem 'yaml_db'
 
 # ------------------------------------------ Console Helpers
 
