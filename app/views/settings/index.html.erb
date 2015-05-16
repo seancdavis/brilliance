@@ -8,8 +8,13 @@
       new_setting_path(:group => group.singularize),
       :class => 'new'
     ) %>
-    <% send(group).each do |setting| %>
-      <%= setting.title %>
-    <% end %>
+    <ul>
+      <% send(group).each do |setting| %>
+        <%= content_tag(
+          :li,
+          link_to(setting.title, edit_setting_path(setting))
+        ) %>
+      <% end %>
+    </ul>
   </section>
 <% end %>
