@@ -559,6 +559,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   kaminari
+  mark_it_zero
   paper_trail
   pg
   pg_search

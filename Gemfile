@@ -38,6 +38,7 @@ gem 'devise'
 gem 'cambium'
 gem 'paper_trail'
 gem 'pg_search'
+gem 'mark_it_zero'
 
 # ------------------------------------------ Console Helpers
 

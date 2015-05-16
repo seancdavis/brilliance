@@ -16,6 +16,8 @@ class Idea < ActiveRecord::Base
 
   has_paper_trail
 
+  converts_markdown :desc_md, :desc_html
+
   # ------------------------------------------ Instance Methods
 
   def description
