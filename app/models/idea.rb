@@ -12,6 +12,10 @@
 
 class Idea < ActiveRecord::Base
 
+  # ------------------------------------------ Plugins
+
+  has_paper_trail
+
   # ------------------------------------------ Instance Methods
 
   def description
