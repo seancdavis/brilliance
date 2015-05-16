@@ -10,6 +10,10 @@ module SettingsHelper
     end
   end
 
+  def current_setting_group
+    current_setting.group.titleize
+  end
+
   def setting_groups
     Setting.groups
   end

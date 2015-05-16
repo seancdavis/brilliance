@@ -32,6 +32,11 @@ class SettingsController < ApplicationController
     end
   end
 
+  def destroy
+    current_setting.destroy
+    redirect_to settings_path, :notice => 'Setting deleted!'
+  end
+
   private
 
     def setting_params

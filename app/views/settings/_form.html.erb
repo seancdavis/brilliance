@@ -6,4 +6,11 @@
     :input_html => { :value => current_setting.group || params[:group] }
   ) %>
   <%= f.submit "Save Setting" %>
+  <%= link_to(
+    "Delete #{current_setting_group}",
+    setting_path(current_setting),
+    :method => :delete,
+    :class => 'delete',
+    :data => { :confirm => 'Are you sure?' }
+  ) if current_setting.id.present? %>
 <% end %>
