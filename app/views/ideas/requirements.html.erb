@@ -1,0 +1,16 @@
+<%= simple_form_for(
+  current_idea,
+  :url => idea_update_path(current_idea, params[:step])
+) do |f| %>
+  <%= f.simple_fields_for :idea_requirements, current_idea_requirements do |rf| %>
+    <%= rf.input(
+      :value,
+      :label => rf.object.requirement.title,
+      :required => false,
+      :as => :boolean
+    ) %>
+    <%= rf.input :setting_id, :as => :hidden %>
+  <% end %>
+  <%= idea_redirect_field(f, :ratings) %>
+  <%= f.submit "Next" %>
+<% end %>

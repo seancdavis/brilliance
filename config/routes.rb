@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   # ------------------------------------------ Public
 
   resources :settings
-  resources :ideas, :path => '/'
+  resources :ideas, :path => '/', :except => [:edit] do
+    get ':step' => 'ideas#edit', :as => :step
+    patch ':step' => 'ideas#update', :as => :update
+  end
 
   # ------------------------------------------ Home Page
 

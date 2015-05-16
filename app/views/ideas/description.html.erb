@@ -1,0 +1,12 @@
+<%= simple_form_for(
+  current_idea,
+  :url => idea_update_path(current_idea, params[:step])
+) do |f| %>
+  <%= f.input(
+    :desc_md,
+    :label => 'Describe your idea.',
+    :required => true
+  ) %>
+  <%= idea_redirect_field(f, :category) %>
+  <%= f.submit "Next" %>
+<% end %>

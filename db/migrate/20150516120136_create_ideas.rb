@@ -4,6 +4,8 @@ class CreateIdeas < ActiveRecord::Migration
       t.string :title
       t.text :desc_md
       t.text :desc_html
+      t.string :status
+      t.integer :category_id
 
       t.timestamps
     end

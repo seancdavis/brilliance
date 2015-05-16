@@ -1,0 +1,13 @@
+<%= simple_form_for(
+  current_idea,
+  :url => idea_update_path(current_idea, params[:step])
+) do |f| %>
+  <%= f.association(
+    :category,
+    :collection => categories,
+    :label => 'What type of idea is this?',
+    :required => true
+  ) %>
+  <%= idea_redirect_field(f, :requirements) %>
+  <%= f.submit "Next" %>
+<% end %>
