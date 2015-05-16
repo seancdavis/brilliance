@@ -10,12 +10,9 @@ Rails.application.routes.draw do
   end
 
   # ------------------------------------------ Public
-  #
-  # After we define all namespaced routes, we can move on to
-  # those routes that are not namespaced.
-  #
-  # resources :users
-  #
+
+  resources :ideas, :path => '/'
+
   # ------------------------------------------ Home Page
 
   root :to => 'ideas#index'

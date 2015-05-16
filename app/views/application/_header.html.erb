@@ -1,1 +1,13 @@
-<header class="main"></header>
+<header class="main">
+  <% if user_signed_in? %>
+    <span class="menu">
+      <%= link_to 'Menu', '#', :class => 'menu-trigger' %>
+      <div class="dropdown">
+        <%= link_to 'Submit Idea', new_idea_path %>
+        <%= link_to 'View All Ideas', ideas_path %>
+        <%= link_to 'About This App', '#' %>
+        <%= link_to('Settings', '#') if current_user.is_admin? %>
+      </div>
+    </span>
+  <% end %>
+</header>
