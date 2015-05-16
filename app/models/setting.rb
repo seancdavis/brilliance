@@ -11,6 +11,10 @@
 
 class Setting < ActiveRecord::Base
 
+  # ------------------------------------------ Plugins
+
+  has_paper_trail
+
   # ------------------------------------------ Class Methods
 
   def self.validated_groups
