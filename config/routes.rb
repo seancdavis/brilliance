@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # ------------------------------------------ Public
 
+  resources :settings
   resources :ideas, :path => '/'
 
   # ------------------------------------------ Home Page

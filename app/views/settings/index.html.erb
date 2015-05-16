@@ -1,0 +1,15 @@
+<h1>App Settings</h1>
+
+<% setting_groups.each do |group| %>
+  <section class="group">
+    <%= content_tag(:h2, group.titleize) %>
+    <%= link_to(
+      "New #{group.singularize.titleize}",
+      new_setting_path(:group => group.singularize),
+      :class => 'new'
+    ) %>
+    <% send(group).each do |setting| %>
+      <%= setting.title %>
+    <% end %>
+  </section>
+<% end %>

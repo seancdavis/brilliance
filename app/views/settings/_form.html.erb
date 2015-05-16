@@ -1,0 +1,9 @@
+<%= simple_form_for current_setting do |f| %>
+  <%= f.input :title, :label => 'Name' %>
+  <%= f.input(
+    :group,
+    :as => :hidden,
+    :input_html => { :value => current_setting.group || params[:group] }
+  ) %>
+  <%= f.submit "Save Setting" %>
+<% end %>
