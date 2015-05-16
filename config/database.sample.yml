@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: brilliance_development
+
+test:
+  <<: *default
+  database: brilliance_test
