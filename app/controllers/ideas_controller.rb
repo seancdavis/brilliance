@@ -2,6 +2,10 @@ class IdeasController < ApplicationController
 
   include IdeasHelper
 
+  def index
+    @ideas = all_ideas
+  end
+
   def new
     @current_idea = Idea.new
   end

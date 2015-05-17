@@ -3,7 +3,7 @@ module IdeasHelper
   # ------------------------------------------ Idea Object
 
   def all_ideas
-    @all_ideas ||= Idea.all
+    @all_ideas ||= Idea.all.includes(:category, :status)
   end
 
   def current_idea

@@ -1,0 +1,19 @@
+<article class="idea">
+  <div class="idea-content">
+    <%= content_tag(:h2, idea.title) %>
+    <%= content_tag(:span, link_to(idea.category.title, idea.category),
+                    :class => 'category') %>
+    <%= content_tag(:span, link_to(idea.status.title, idea.status),
+                    :class => 'status') if idea.status_id.present? %>
+    <%= content_tag(:div, idea.description) %>
+  </div>
+  <div class="ratings">
+    <h3>Ratings</h3>
+    <dl>
+      <% ['difficulty','time'].each do |rating| %>
+        <%= content_tag(:dd, idea.send(rating)) %>
+        <%= content_tag(:dt, rating.titleize) %>
+      <% end %>
+    </dl>
+  </div>
+</article>
