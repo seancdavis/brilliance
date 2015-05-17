@@ -1,20 +1,28 @@
 <h1>App Settings</h1>
 
-<% setting_groups.each do |group| %>
+<% ['category', 'status'].each do |group| %>
   <section class="group">
-    <%= content_tag(:h2, group.titleize) %>
-    <%= link_to(
-      "New #{group.singularize.titleize}",
-      new_setting_path(:group => group.singularize),
-      :class => 'new'
-    ) %>
+    <%= content_tag(:h2, group.pluralize.titleize) %>
+    <%= link_to("New #{group.titleize}", send("new_#{group}_path"),
+                :class => 'new') %>
     <ul>
-      <% send(group).each do |setting| %>
+      <% send("all_#{group.pluralize}").each do |setting| %>
         <%= content_tag(
           :li,
-          link_to(setting.title, edit_setting_path(setting))
+          link_to(setting.title, send("edit_#{group}_path", setting))
         ) %>
       <% end %>
     </ul>
   </section>
 <% end %>
+
+<section class="group">
+  <h2>Other</h2>
+  <ul>
+    <% all_settings.each do |setting| %>
+      <li>
+        <%= link_to(setting.title, edit_setting_path(setting)) %>
+      </li>
+    <% end %>
+  </ul>
+</section>

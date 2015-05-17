@@ -3,8 +3,9 @@
 # Table name: settings
 #
 #  id         :integer          not null, primary key
-#  key        :string(255)
-#  value      :text
+#  title      :string(255)
+#  slug       :string(255)
+#  body       :text
 #  created_at :datetime
 #  updated_at :datetime
 #

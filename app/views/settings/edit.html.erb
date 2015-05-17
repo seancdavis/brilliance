@@ -1,2 +1,6 @@
-<%= content_tag(:h1, "Edit #{current_setting_group}") %>
-<%= render 'form' %>
+<%= content_tag(:h1, "Edit #{current_setting.title}") %>
+
+<%= simple_form_for current_setting do |f| %>
+  <%= f.input :body, :label => false %>
+  <%= f.submit "Save" %>
+<% end %>

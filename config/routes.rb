@@ -11,11 +11,10 @@ Rails.application.routes.draw do
 
   # ------------------------------------------ Public
 
-  resources :settings
-  resources :ideas, :path => '/', :except => [:edit] do
-    get ':step' => 'ideas#edit', :as => :step
-    patch ':step' => 'ideas#update', :as => :update
-  end
+  resources :settings, :only => [:index, :edit, :update], :param => :slug
+  resources :categories, :param => :slug
+  resources :statuses, :param => :slug
+  resources :ideas, :path => '/'
 
   # ------------------------------------------ Home Page
 

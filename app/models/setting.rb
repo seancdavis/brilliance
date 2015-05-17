@@ -3,8 +3,9 @@
 # Table name: settings
 #
 #  id         :integer          not null, primary key
-#  key        :string(255)
-#  value      :text
+#  title      :string(255)
+#  slug       :string(255)
+#  body       :text
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -15,8 +16,14 @@ class Setting < ActiveRecord::Base
 
   has_paper_trail
 
+  has_superslug
+
+  # ------------------------------------------ Scopes
+
+  scope :alpha, -> { order('title asc') }
+
   # ------------------------------------------ Validations
 
-  validates :key, :value, :presence => true
+  validates :title, :body, :presence => true
 
 end
