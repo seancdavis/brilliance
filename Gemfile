@@ -40,7 +40,7 @@ gem 'paper_trail'
 gem 'pg_search'
 gem 'mark_it_zero'
 gem 'yaml_db'
-gem 'superslug'
+gem 'superslug', '~> 1.2.0'
 
 # ------------------------------------------ Console Helpers
 
