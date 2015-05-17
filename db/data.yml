@@ -1,5 +1,27 @@
 
 ---
+settings:
+  columns:
+  - id
+  - title
+  - slug
+  - body
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - New Idea Message
+    - new-idea-message
+    - "**SO YOU HAVE A GREAT IDEA?**\r\n\r\nDolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    - '2015-05-17 11:35:59.505089'
+    - '2015-05-17 11:40:52.696655'
+
+---
 users:
   columns:
   - id
