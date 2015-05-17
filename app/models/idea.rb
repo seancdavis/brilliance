@@ -10,6 +10,9 @@
 #  status      :string(255)
 #  category_id :integer
 #  status_id   :integer
+#  creator_id  :integer
+#  difficulty  :integer          default(0)
+#  rating      :integer          default(0)
 #  created_at  :datetime
 #  updated_at  :datetime
 #
@@ -26,22 +29,17 @@ class Idea < ActiveRecord::Base
 
   # ------------------------------------------ Associations
 
-  belongs_to :category, :class_name => Setting
-
-  has_many :idea_requirements, :dependent => :destroy
-  has_many :requirements, :through => :idea_requirements, :class_name => Setting
-
-  has_many :idea_ratings, :dependent => :destroy
-  has_many :ratings, :through => :idea_ratings, :class_name => Setting
-
-  # ------------------------------------------ Attributes
-
-  accepts_nested_attributes_for :idea_requirements
-  accepts_nested_attributes_for :idea_ratings
+  belongs_to :category
+  belongs_to :status
+  belongs_to :creator, :class_name => User
 
   # ------------------------------------------ Scopes
 
   scope :empty, -> { where(:title => nil) }
+
+  # ------------------------------------------ Validations
+
+  validates :title, :presence => true
 
   # ------------------------------------------ Instance Methods
 

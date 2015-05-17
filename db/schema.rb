@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20150517111246) do
     t.string   "status"
     t.integer  "category_id"
     t.integer  "status_id"
+    t.integer  "creator_id"
+    t.integer  "difficulty",  default: 0
+    t.integer  "rating",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

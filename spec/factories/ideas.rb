@@ -10,6 +10,9 @@
 #  status      :string(255)
 #  category_id :integer
 #  status_id   :integer
+#  creator_id  :integer
+#  difficulty  :integer          default(0)
+#  rating      :integer          default(0)
 #  created_at  :datetime
 #  updated_at  :datetime
 #

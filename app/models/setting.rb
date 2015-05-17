@@ -15,34 +15,8 @@ class Setting < ActiveRecord::Base
 
   has_paper_trail
 
-  # ------------------------------------------ Associations
-
-  has_many :ideas, :as => :category
-
   # ------------------------------------------ Validations
 
-  validates :title, :group, :presence => true
-
-  validate :existence_of_group
-
-  # ------------------------------------------ Class Methods
-
-  def self.validated_groups
-    groups.map(&:singularize)
-  end
-
-  def self.groups
-    ['requirements','statuses','categories','ratings']
-  end
-
-  # ------------------------------------------ Private Methods
-
-  private
-
-    def existence_of_group
-      unless Setting.validated_groups.includes?(self.group)
-        errors.add(:group, "is not a group.")
-      end
-    end
+  validates :key, :value, :presence => true
 
 end

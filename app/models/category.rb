@@ -15,4 +15,16 @@ class Category < ActiveRecord::Base
 
   has_superslug
 
+  # ------------------------------------------ Associations
+
+  has_many :ideas
+
+  # ------------------------------------------ Scopes
+
+  scope :alpha, -> { order('title asc') }
+
+  # ------------------------------------------ Validations
+
+  validates :title, :presence => true
+
 end
