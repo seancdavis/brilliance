@@ -1,18 +1,18 @@
 # == Schema Information
 #
-# Table name: settings
+# Table name: categories
 #
 #  id         :integer          not null, primary key
-#  key        :string(255)
-#  value      :text
+#  title      :string(255)
+#  slug       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 FactoryGirl.define do
-  factory :setting do
+  factory :category do
     title "MyString"
-type ""
+slug "MyString"
   end
 
 end

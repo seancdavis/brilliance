@@ -11,40 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516143648) do
+ActiveRecord::Schema.define(version: 20150517111246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "idea_ratings", force: true do |t|
-    t.integer  "idea_id"
-    t.integer  "setting_id"
-    t.integer  "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "idea_requirements", force: true do |t|
-    t.integer  "idea_id"
-    t.integer  "setting_id"
-    t.boolean  "value"
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ideas", force: true do |t|
     t.string   "title"
+    t.string   "slug"
     t.text     "desc_md"
     t.text     "desc_html"
     t.string   "status"
     t.integer  "category_id"
+    t.integer  "status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "settings", force: true do |t|
+    t.string   "key"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statuses", force: true do |t|
     t.string   "title"
-    t.string   "group"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,17 +1,16 @@
 # == Schema Information
 #
-# Table name: idea_ratings
+# Table name: statuses
 #
 #  id         :integer          not null, primary key
-#  idea_id    :integer
-#  setting_id :integer
-#  value      :integer
+#  title      :string(255)
+#  slug       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 require 'rails_helper'
 
-RSpec.describe IdeaRating, type: :model do
+RSpec.describe Status, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

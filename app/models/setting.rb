@@ -3,8 +3,8 @@
 # Table name: settings
 #
 #  id         :integer          not null, primary key
-#  title      :string(255)
-#  group      :string(255)
+#  key        :string(255)
+#  value      :text
 #  created_at :datetime
 #  updated_at :datetime
 #

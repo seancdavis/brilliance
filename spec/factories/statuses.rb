@@ -1,20 +1,18 @@
 # == Schema Information
 #
-# Table name: idea_ratings
+# Table name: statuses
 #
 #  id         :integer          not null, primary key
-#  idea_id    :integer
-#  setting_id :integer
-#  value      :integer
+#  title      :string(255)
+#  slug       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 FactoryGirl.define do
-  factory :idea_rating do
-    idea_id 1
-setting_id 1
-value 1
+  factory :status do
+    title "MyString"
+slug "MyString"
   end
 
 end
