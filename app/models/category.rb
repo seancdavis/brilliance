@@ -15,7 +15,7 @@ class Category < ActiveRecord::Base
 
   has_paper_trail
 
-  has_superslug
+  has_superslug :title, :slug, :force_update => true
 
   # ------------------------------------------ Associations
 

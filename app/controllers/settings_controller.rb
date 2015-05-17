@@ -1,7 +1,5 @@
 class SettingsController < ApplicationController
 
-  include SettingsHelper
-
   before_filter :authenticate_admin!
 
   def update
