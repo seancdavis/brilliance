@@ -15,7 +15,7 @@ gem 'pg'
 
 # stylesheets helpers
 gem 'sass-rails'
-gem 'compass-rails'
+gem 'compass-rails', '>= 2.0.2'
 gem 'bourbon'
 gem 'bones-rails'
 
@@ -38,7 +38,7 @@ gem 'devise'
 gem 'cambium'
 gem 'paper_trail'
 gem 'pg_search'
-gem 'mark_it_zero'
+gem 'mark_it_zero', '~> 0.2.0'
 gem 'yaml_db'
 gem 'superslug', '~> 1.2.0'
 

@@ -10,7 +10,7 @@ class CreateIdeas < ActiveRecord::Migration
       t.integer :status_id
       t.integer :creator_id
       t.integer :difficulty, :default => 0
-      t.integer :rating, :default => 0
+      t.integer :time, :default => 0
 
       t.timestamps
     end

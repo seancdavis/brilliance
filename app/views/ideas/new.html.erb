@@ -1,3 +1,19 @@
 <h1>Submit An Idea</h1>
-<p>So you have a great idea ...</p>
-<%= link_to("Let's Do This!", ideas_path, :method => :post) %>
+
+<%= simple_form_for current_idea do |f| %>
+
+  <%= markdown(setting('new-idea-message')).html_safe %>
+  <%= f.input :title, :label => 'Does your idea have a name?',
+              :required => true %>
+  <%= f.input :desc_md, :label => 'Describe your idea.',
+              :required => true %>
+  <%= f.association :category, :collection => all_categories,
+                    :label => 'What type of idea is this?',
+                    :required => true %>
+  <%= f.input :difficulty, :label => 'How difficult is this?',
+              :as => :range %>
+  <%= f.input :time, :label => 'How time consuming is this?',
+              :as => :range %>
+
+  <%= f.submit "Next" %>
+<% end %>
