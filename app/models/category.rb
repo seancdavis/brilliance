@@ -10,4 +10,9 @@
 #
 
 class Category < ActiveRecord::Base
+
+  # ------------------------------------------ Plugins
+
+  has_superslug
+
 end

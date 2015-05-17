@@ -573,6 +573,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   simple_form
+  superslug
   uglifier
   unicorn-rails
   wirb

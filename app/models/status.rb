@@ -10,4 +10,9 @@
 #
 
 class Status < ActiveRecord::Base
+
+  # ------------------------------------------ Plugins
+
+  has_superslug
+
 end

@@ -20,6 +20,8 @@ class Idea < ActiveRecord::Base
 
   has_paper_trail
 
+  has_superslug
+
   converts_markdown :desc_md, :desc_html
 
   # ------------------------------------------ Associations
