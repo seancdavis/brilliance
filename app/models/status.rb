@@ -13,6 +13,8 @@ class Status < ActiveRecord::Base
 
   # ------------------------------------------ Plugins
 
+  has_paper_trail
+
   has_superslug
 
   # ------------------------------------------ Associations
