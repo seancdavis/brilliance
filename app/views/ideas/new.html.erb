@@ -6,8 +6,7 @@
   <%= f.input :desc_md, :label => 'Describe your idea.', :autofocus => true,
               :input_html => { :class => 'behave' } %>
   <%= f.association :category, :collection => all_categories,
-                    :label => 'What type of idea is this?',
-                    :required => true %>
+                    :label => 'What type of idea is this?' %>
 
   <%= f.submit "Next" %>
 <% end %>

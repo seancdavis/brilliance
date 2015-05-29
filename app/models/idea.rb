@@ -39,7 +39,7 @@ class Idea < ActiveRecord::Base
 
   # ------------------------------------------ Validations
 
-  validates :title, :presence => true
+  validates :title, :category_id, :presence => true
 
   # ------------------------------------------ Instance Methods
 
