@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # ------------------------------------------ Public
 
-  resources :settings, :only => [:index, :edit, :update], :param => :slug
+  resources :settings, :only => [:index]
   resources :categories, :param => :slug
   resources :statuses, :param => :slug
   post 'new' => 'ideas#new_search', :as => :new_idea_search

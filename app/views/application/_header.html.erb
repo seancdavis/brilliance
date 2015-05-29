@@ -1,13 +1,12 @@
 <header class="main">
-  <!-- <%# if user_signed_in? %>
-    <span class="menu">
-      <%#= link_to 'Menu', '#', :class => 'menu-trigger' %>
-      <div class="dropdown">
-        <%#= link_to 'Submit Idea', new_idea_path %>
-        <%#= link_to 'View All Ideas', ideas_path %>
-        <%#= link_to 'About This App', '#' %>
-        <%#= link_to('Settings', settings_path) if current_user.is_admin? %>
-      </div>
-    </span>
-  <%# end %> -->
+  <div class="user-links">
+    <%= link_to(settings_path) do %>
+      <%= content_tag(:i, nil, :class => 'icon-cogs') %>
+    <% end %>
+    <%= link_to('#') { content_tag(:i, nil, :class => 'icon-user') } %>
+    <%= link_to(destroy_user_session_path) do %>
+      <%= content_tag(:i, nil, :class => 'icon-exit') %>
+    <% end %>
+    <%= avatar(current_user, 84) %>
+  </div>
 </header>

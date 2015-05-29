@@ -15,14 +15,3 @@
     </ul>
   </section>
 <% end %>
-
-<section class="group">
-  <h2>Other</h2>
-  <ul>
-    <% all_settings.each do |setting| %>
-      <li>
-        <%= link_to(setting.title, edit_setting_path(setting)) %>
-      </li>
-    <% end %>
-  </ul>
-</section>
