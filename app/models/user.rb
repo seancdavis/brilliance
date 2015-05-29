@@ -5,6 +5,7 @@
 #  id                     :integer          not null, primary key
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
+#  is_admin               :boolean          default(FALSE)
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
@@ -15,7 +16,7 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime
 #  updated_at             :datetime
-#  is_admin               :boolean          default(FALSE)
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -28,6 +29,10 @@ class User < ActiveRecord::Base
   # ------------------------------------------ Associations
 
   has_many :ideas, :as => :creator
+
+  # ------------------------------------------ Scopes
+
+  scope :alpha, -> { order('email asc') }
 
   # ------------------------------------------ Instance Methods
 

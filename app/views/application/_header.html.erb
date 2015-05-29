@@ -5,7 +5,9 @@
       <%= link_to(settings_path) do %>
         <%= content_tag(:i, nil, :class => 'icon-cogs') %>
       <% end %>
-      <%= link_to('#') { content_tag(:i, nil, :class => 'icon-user') } %>
+      <%= link_to(edit_profile_path) do %>
+        <%= content_tag(:i, nil, :class => 'icon-user') %>
+      <% end %>
       <%= link_to(destroy_user_session_path) do %>
         <%= content_tag(:i, nil, :class => 'icon-exit') %>
       <% end %>

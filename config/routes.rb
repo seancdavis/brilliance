@@ -17,9 +17,16 @@ Rails.application.routes.draw do
 
   # ------------------------------------------ Public
 
-  resources :settings, :only => [:index]
+  # Settings
+  get 'settings' => 'settings#index', :as => :settings
   resources :categories, :param => :slug
   resources :statuses, :param => :slug
+
+  # Users
+  get 'profile/edit' => 'users#edit', :as => :edit_profile
+  patch 'profile/edit' => 'users#update', :as => :update_profile
+
+  # Ideas
   post 'new' => 'ideas#new_search', :as => :new_idea_search
   resources :ideas, :path => '/', :param => :slug
 

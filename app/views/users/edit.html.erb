@@ -1,0 +1,7 @@
+<%= simple_form_for current_user, :url => update_profile_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password %>
+  <%= f.submit "Save Profile" %>
+<% end %>
