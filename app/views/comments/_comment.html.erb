@@ -1,0 +1,12 @@
+<article class="comment">
+  <span class="user">
+    <%= avatar(comment.author, 84) %>
+    <%= content_tag :span, comment.author.name, :class => 'author' %>
+  </span>
+  <span class="links">
+    <%= delete_comment_link(comment) %>
+  </span>
+  <%= comment.html.html_safe %>
+  <%= content_tag :span, "#{time_ago_in_words(comment.created_at)} ago",
+                  :class => 'date' %>
+</article>

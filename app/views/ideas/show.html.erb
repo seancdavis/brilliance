@@ -1,4 +1,4 @@
-<article class="idea">
+<section class="idea">
   <div class="idea-content">
     <h1>
       <%= current_idea.title %>
@@ -12,4 +12,9 @@
                     :class => 'status') if current_idea.status_id.present? %>
     <%= content_tag(:div, current_idea.description) %>
   </div>
-</article>
+</section>
+
+<section class="comments">
+  <%= new_comment_form(current_idea) %>
+  <%= render current_idea.comments.oldest_first %>
+</section>

@@ -20,10 +20,8 @@
 
 class User < ActiveRecord::Base
 
-  # ------------------------------------------ Devise
+  # ------------------------------------------ Plugins
 
-  # Include default devise modules. Others available are:
-  # :lockable, :timeoutable, :omniauthable, :confirmable, :registerable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
          :validatable
 
@@ -39,6 +37,10 @@ class User < ActiveRecord::Base
 
   def admin?
     is_admin?
+  end
+
+  def name
+    email
   end
 
 end

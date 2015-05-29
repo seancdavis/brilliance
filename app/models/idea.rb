@@ -24,6 +24,8 @@ class Idea < ActiveRecord::Base
 
   converts_markdown :desc_md, :desc_html
 
+  has_comments
+
   include PgSearch
   pg_search_scope :search_content, :against => [:title, :desc_md]
 
