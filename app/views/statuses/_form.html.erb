@@ -1,7 +1,0 @@
-<%= simple_form_for current_status do |f| %>
-  <%= f.input :title, :label => "Name", :autofocus => true %>
-  <%= f.submit "Save" %>
-  <%= link_to('Delete Status', status_path(current_status),
-              :method => :delete, :data => { :confirm => 'Are you sure?' }
-              ) if current_status.id.present? %>
-<% end %>

@@ -3,8 +3,10 @@
 <% ['category', 'status'].each do |group| %>
   <section class="group">
     <%= content_tag(:h2, group.pluralize.titleize) %>
-    <%= link_to("New #{group.titleize}", send("new_#{group}_path"),
-                :class => 'new') %>
+    <%= simple_form_for group.classify.constantize.new do |f| %>
+      <%= f.input :title, :label => false,
+                  :placeholder => "New #{group.titleize}" %>
+    <% end %>
     <ul>
       <% send("all_#{group.pluralize}").each do |setting| %>
         <%= content_tag(

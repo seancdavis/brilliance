@@ -1,2 +1,8 @@
 <%= content_tag(:h1, "Edit #{current_category.title}") %>
-<%= render 'form' %>
+<%= simple_form_for current_category do |f| %>
+  <%= f.input :title, :label => "Name", :autofocus => true %>
+  <%= f.submit "Save" %>
+  <%= link_to('Delete Category', category_path(current_category),
+              :method => :delete, :data => { :confirm => 'Are you sure?' }
+              ) if current_category.id.present? %>
+<% end %>

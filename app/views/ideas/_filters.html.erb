@@ -3,8 +3,8 @@
   <select class="categories">
     <option value="nil">Filter by Category ...</option>
     <% all_categories.each do |cat| %>
-      <option value="<%= category_path(cat) %>"
-              <%= request.path == category_path(cat) ? 'selected=true' : nil %>>
+      <option value="<%= filter_category_path(cat) %>"
+              <%= request.path == filter_category_path(cat) ? 'selected=true' : nil %>>
         <%= cat.title %>
       </option>
     <% end %>
@@ -13,8 +13,8 @@
   <select class="statuses">
     <option value="nil">Filter by Status ...</option>
     <% all_statuses.each do |status| %>
-      <option value="<%= status_path(status) %>"
-              <%= request.path == status_path(status) ? 'selected=true' : nil %>>
+      <option value="<%= filter_status_path(status) %>"
+              <%= request.path == filter_status_path(status) ? 'selected=true' : nil %>>
         <%= status.title %>
       </option>
     <% end %>

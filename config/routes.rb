@@ -19,14 +19,18 @@ Rails.application.routes.draw do
 
   # Settings
   get 'settings' => 'settings#index', :as => :settings
-  resources :categories, :param => :slug
-  resources :statuses, :param => :slug
+  scope 'settings' do
+    resources :categories, :param => :slug, :except => [:index, :new, :show]
+    resources :statuses, :param => :slug, :except => [:index, :new, :show]
+  end
 
   # Users
   get 'profile/edit' => 'users#edit', :as => :edit_profile
   patch 'profile/edit' => 'users#update', :as => :update_profile
 
   # Ideas
+  get 'categories/:slug' => 'categories#show', :as => :filter_category
+  get 'statuses/:slug' => 'statuses#show', :as => :filter_status
   post 'new' => 'ideas#new_search', :as => :new_idea_search
   resources :ideas, :path => '/', :param => :slug
 

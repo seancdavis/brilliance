@@ -7,16 +7,12 @@ class CategoriesController < ApplicationController
     render 'ideas/index'
   end
 
-  def new
-    @current_category = Category.new
-  end
-
   def create
     @current_category = Category.new(category_params)
     if current_category.save
       redirect_to settings_path, :notice => 'Category saved!'
     else
-      render 'new'
+      render 'settings/index'
     end
   end
 

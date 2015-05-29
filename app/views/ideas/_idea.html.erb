@@ -1,10 +1,16 @@
 <article class="idea">
   <div class="idea-content">
     <%= content_tag(:h2, link_to(idea.title, idea)) %>
-    <%= content_tag(:span, link_to(idea.category.title, idea.category),
-                    :class => 'category') %>
-    <%= content_tag(:span, link_to(idea.status.title, idea.status),
-                    :class => 'status') if idea.status_id.present? %>
+    <span class="category">
+      <%= link_to idea.category.title,
+                  filter_category_path(idea.category) %>
+    </span>
+    <% if idea.status_id.present? %>
+      <span class="status">
+        <%= link_to idea.status.title,
+                    filter_status_path(idea.status) %>
+      </span>
+    <% end %>
     <%= content_tag(:div, idea.description) %>
   </div>
 </article>

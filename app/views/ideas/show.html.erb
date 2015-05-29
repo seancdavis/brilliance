@@ -6,10 +6,16 @@
         <i class="icon-pencil"></i>
       <% end %>
     </h1>
-    <%= content_tag(:span, link_to(current_idea.category.title, current_idea.category),
-                    :class => 'category') %>
-    <%= content_tag(:span, link_to(current_idea.status.title, current_idea.status),
-                    :class => 'status') if current_idea.status_id.present? %>
+    <span class="category">
+      <%= link_to current_idea.category.title,
+                  filter_category_path(current_idea.category) %>
+    </span>
+    <% if current_idea.status_id.present? %>
+      <span class="status">
+        <%= link_to current_idea.status.title,
+                    filter_status_path(current_idea.status) %>
+      </span>
+    <% end %>
     <%= content_tag(:div, current_idea.description) %>
   </div>
 </section>
