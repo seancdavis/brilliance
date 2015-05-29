@@ -8,8 +8,8 @@ module IdeasHelper
 
   def current_idea
     @current_idea ||= begin
-      id = params[:idea_id] || params[:id]
-      idea = all_ideas.select { |idea| idea.id == id.to_i }.first
+      slug = params[:idea_slug] || params[:slug]
+      idea = all_ideas.select { |idea| idea.slug == slug }.first
       return Idea.new if idea.nil?
       idea
     end

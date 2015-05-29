@@ -7,6 +7,9 @@ class IdeasController < ApplicationController
     @current_idea = Idea.new
   end
 
+  def show
+  end
+
   def new_search
     if params[:idea] && params[:idea][:title]
       @ideas = Idea.search_content(params[:idea][:title])

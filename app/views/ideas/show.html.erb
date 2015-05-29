@@ -1,0 +1,10 @@
+<article class="idea">
+  <div class="idea-content">
+    <%= content_tag(:h1, current_idea.title) %>
+    <%= content_tag(:span, link_to(current_idea.category.title, current_idea.category),
+                    :class => 'category') %>
+    <%= content_tag(:span, link_to(current_idea.status.title, current_idea.status),
+                    :class => 'status') if current_idea.status_id.present? %>
+    <%= content_tag(:div, current_idea.description) %>
+  </div>
+</article>

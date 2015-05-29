@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :categories, :param => :slug
   resources :statuses, :param => :slug
   post 'new' => 'ideas#new_search', :as => :new_idea_search
-  resources :ideas, :path => '/'
+  resources :ideas, :path => '/', :param => :slug
 
   # ------------------------------------------ Home Page
 

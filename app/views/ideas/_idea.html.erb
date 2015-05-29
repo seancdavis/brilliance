@@ -1,6 +1,6 @@
 <article class="idea">
   <div class="idea-content">
-    <%= content_tag(:h2, idea.title) %>
+    <%= content_tag(:h2, link_to(idea.title, idea)) %>
     <%= content_tag(:span, link_to(idea.category.title, idea.category),
                     :class => 'category') %>
     <%= content_tag(:span, link_to(idea.status.title, idea.status),
