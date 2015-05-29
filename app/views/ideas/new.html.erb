@@ -12,3 +12,9 @@
 
   <%= f.submit "Next" %>
 <% end %>
+
+<% if @ideas.size > 0 %>
+  <p>Here are some similar ideas. Maybe you want to comment on one of these
+  instead of creating a new idea?</p>
+  <%= render @ideas %>
+<% end %>
