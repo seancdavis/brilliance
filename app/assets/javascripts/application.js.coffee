@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require underscore
 #= require backbone
+#= require behave
 #= require_self
 #= require_tree ./templates
 #= require_tree ./views
