@@ -38,14 +38,6 @@ ActiveRecord::Schema.define(version: 20150517111246) do
     t.datetime "updated_at"
   end
 
-  create_table "settings", force: true do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "statuses", force: true do |t|
     t.string   "title"
     t.string   "slug"
