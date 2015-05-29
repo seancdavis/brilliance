@@ -7,12 +7,9 @@
 #  slug        :string(255)
 #  desc_md     :text
 #  desc_html   :text
-#  status      :string(255)
 #  category_id :integer
 #  status_id   :integer
 #  creator_id  :integer
-#  difficulty  :integer          default(0)
-#  time        :integer          default(0)
 #  created_at  :datetime
 #  updated_at  :datetime
 #
@@ -26,6 +23,9 @@ class Idea < ActiveRecord::Base
   has_superslug
 
   converts_markdown :desc_md, :desc_html
+
+  include PgSearch
+  pg_search_scope :search_content, :against => [:title, :desc_md]
 
   # ------------------------------------------ Associations
 

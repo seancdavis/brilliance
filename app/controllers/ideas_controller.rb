@@ -4,6 +4,17 @@ class IdeasController < ApplicationController
 
   def index
     @ideas = all_ideas
+    @current_idea = Idea.new
+  end
+
+  def new_search
+    if params[:idea] && params[:idea][:title]
+      @ideas = Idea.search_content(params[:idea][:title])
+      @current_idea = Idea.new(idea_params)
+      render 'new'
+    else
+      redirect_to root_path
+    end
   end
 
   def new
@@ -24,7 +35,7 @@ class IdeasController < ApplicationController
     def idea_params
       params
         .require(:idea)
-        .permit(:title, :desc_md, :category_id, :difficulty, :time)
+        .permit(:title, :desc_md, :category_id, :status_id)
     end
 
 end

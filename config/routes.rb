@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :settings, :only => [:index, :edit, :update], :param => :slug
   resources :categories, :param => :slug
   resources :statuses, :param => :slug
+  post 'new' => 'ideas#new_search', :as => :new_idea_search
   resources :ideas, :path => '/'
 
   # ------------------------------------------ Home Page

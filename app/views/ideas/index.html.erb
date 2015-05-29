@@ -1,3 +1,9 @@
 <h1>All Ideas</h1>
+
+<%= simple_form_for current_idea, :url => new_idea_search_path do |f| %>
+  <%= f.input :title %>
+  <%= f.submit %>
+<% end %>
+
 <div class="filters">This is where the filters will go ...</div>
 <%= render @ideas %>

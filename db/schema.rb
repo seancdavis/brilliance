@@ -28,12 +28,9 @@ ActiveRecord::Schema.define(version: 20150517111246) do
     t.string   "slug"
     t.text     "desc_md"
     t.text     "desc_html"
-    t.string   "status"
     t.integer  "category_id"
     t.integer  "status_id"
     t.integer  "creator_id"
-    t.integer  "difficulty",  default: 0
-    t.integer  "time",        default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
