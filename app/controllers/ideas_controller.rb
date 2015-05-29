@@ -8,6 +8,7 @@ class IdeasController < ApplicationController
   end
 
   def show
+    not_found if current_idea.nil? || current_idea.id.blank?
   end
 
   def new_search
