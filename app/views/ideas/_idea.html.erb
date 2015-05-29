@@ -7,13 +7,4 @@
                     :class => 'status') if idea.status_id.present? %>
     <%= content_tag(:div, idea.description) %>
   </div>
-  <div class="ratings">
-    <h3>Ratings</h3>
-    <dl>
-      <% ['difficulty','time'].each do |rating| %>
-        <%= content_tag(:dd, idea.send(rating)) %>
-        <%= content_tag(:dt, rating.titleize) %>
-      <% end %>
-    </dl>
-  </div>
 </article>

@@ -2,6 +2,11 @@ class StatusesController < ApplicationController
 
   before_filter :authenticate_admin!, :except => [:show]
 
+  def show
+    @ideas = current_status.ideas
+    render 'ideas/index'
+  end
+
   def new
     @current_status = Status.new
   end
