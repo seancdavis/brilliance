@@ -1,13 +1,15 @@
 <header class="main">
   <%= content_tag(:h1, link_to('Brilliance', root_path), :class => 'logo') %>
-  <div class="user-links">
-    <%= link_to(settings_path) do %>
-      <%= content_tag(:i, nil, :class => 'icon-cogs') %>
-    <% end %>
-    <%= link_to('#') { content_tag(:i, nil, :class => 'icon-user') } %>
-    <%= link_to(destroy_user_session_path) do %>
-      <%= content_tag(:i, nil, :class => 'icon-exit') %>
-    <% end %>
-    <%= avatar(current_user, 84) %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="user-links">
+      <%= link_to(settings_path) do %>
+        <%= content_tag(:i, nil, :class => 'icon-cogs') %>
+      <% end %>
+      <%= link_to('#') { content_tag(:i, nil, :class => 'icon-user') } %>
+      <%= link_to(destroy_user_session_path) do %>
+        <%= content_tag(:i, nil, :class => 'icon-exit') %>
+      <% end %>
+      <%= avatar(current_user, 84) %>
+    </div>
+  <% end %>
 </header>
