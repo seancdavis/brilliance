@@ -33,6 +33,17 @@ class IdeasController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if current_idea.update(idea_params)
+      redirect_to current_idea, :notice => 'Changes saved, you wishy-washy human!'
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def idea_params

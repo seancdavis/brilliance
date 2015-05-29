@@ -1,0 +1,14 @@
+<h1>Edit <%= current_idea.title %></h1>
+
+<%= simple_form_for current_idea do |f| %>
+
+  <%= f.input :title, :label => 'Does your idea have a name?',
+              :autofocus => true %>
+  <%= f.input :desc_md, :label => 'Describe your idea.',
+              :input_html => { :class => 'behave' } %>
+  <%= f.association :category, :collection => all_categories,
+                    :label => 'What type of idea is this?',
+                    :required => true %>
+
+  <%= f.submit "Next" %>
+<% end %>

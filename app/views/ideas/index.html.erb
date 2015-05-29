@@ -1,7 +1,7 @@
-<h1>All Ideas</h1>
-
 <%= simple_form_for current_idea, :url => new_idea_search_path do |f| %>
-  <%= f.input :title %>
+  <h3>Got a new idea?</h3>
+  <%= f.input :title, :label => false,
+              :input_html => { :placeholder => "What's your idea?" } %>
   <%= f.submit %>
 <% end %>
 

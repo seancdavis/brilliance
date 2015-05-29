@@ -1,6 +1,11 @@
 <article class="idea">
   <div class="idea-content">
-    <%= content_tag(:h1, current_idea.title) %>
+    <h1>
+      <%= current_idea.title %>
+      <%= link_to(edit_idea_path(current_idea)) do %>
+        <i class="icon-pencil"></i>
+      <% end %>
+    </h1>
     <%= content_tag(:span, link_to(current_idea.category.title, current_idea.category),
                     :class => 'category') %>
     <%= content_tag(:span, link_to(current_idea.status.title, current_idea.status),

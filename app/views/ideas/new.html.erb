@@ -2,10 +2,8 @@
 
 <%= simple_form_for current_idea do |f| %>
 
-  <%= f.input :title, :label => 'Does your idea have a name?',
-              :required => true %>
-  <%= f.input :desc_md, :label => 'Describe your idea.',
-              :required => true, :autofocus => true,
+  <%= f.input :title, :label => 'Does your idea have a name?' %>
+  <%= f.input :desc_md, :label => 'Describe your idea.', :autofocus => true,
               :input_html => { :class => 'behave' } %>
   <%= f.association :category, :collection => all_categories,
                     :label => 'What type of idea is this?',
