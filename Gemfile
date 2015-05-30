@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # ------------------------------------------ Base
 
 # ruby/rails version
-ruby '2.1.0'
+ruby '2.1.4'
 gem 'rails', '4.1.0'
 
 # app server
