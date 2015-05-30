@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 # ------------------------------------------ Base
 
-# rails version
+# ruby/rails version
+ruby '2.1.0'
 gem 'rails', '4.1.0'
 
 # app server
