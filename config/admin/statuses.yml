@@ -1,0 +1,29 @@
+model: Status
+table:
+  title: Statuses
+  scope: all
+  columns:
+    title:
+      heading: Title
+    slug:
+      heading: Slug
+  buttons:
+    new: New Status
+export:
+  button: Export Statuses
+  columns:
+    title:
+      label: Title
+    slug:
+      label: Slug
+form:
+  new: &new
+    title: New Status
+    fields:
+      title:
+        type: string
+      slug:
+        type: string
+  edit:
+    <<: *new
+    title: Edit Status

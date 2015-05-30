@@ -1,0 +1,59 @@
+model: Idea
+table:
+  title: Ideas
+  scope: all
+  columns:
+    title:
+      heading: Title
+    slug:
+      heading: Slug
+    desc_md:
+      heading: Desc Md
+    desc_html:
+      heading: Desc Html
+    category_id:
+      heading: Category
+    status_id:
+      heading: Status
+    creator_id:
+      heading: Creator
+  buttons:
+    new: New Idea
+export:
+  button: Export Ideas
+  columns:
+    title:
+      label: Title
+    slug:
+      label: Slug
+    desc_md:
+      label: Desc Md
+    desc_html:
+      label: Desc Html
+    category_id:
+      label: Category
+    status_id:
+      label: Status
+    creator_id:
+      label: Creator
+form:
+  new: &new
+    title: New Idea
+    fields:
+      title:
+        type: string
+      slug:
+        type: string
+      desc_md:
+        type: text
+      desc_html:
+        type: text
+      category_id:
+        type: string
+      status_id:
+        type: string
+      creator_id:
+        type: string
+  edit:
+    <<: *new
+    title: Edit Idea

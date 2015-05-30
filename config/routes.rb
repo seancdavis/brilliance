@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   # ------------------------------------------ Admin / CMS
 
   mount Cambium::Engine => '/'
+  namespace :admin do
+    resources :statuses
+    resources :categories
+    resources :ideas
+  end
 
   # ------------------------------------------ Comments (PeanutGallery)
 

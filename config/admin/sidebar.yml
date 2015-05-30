@@ -7,3 +7,18 @@ users:
   route: cambium.admin_users
   icon: users
   controllers: ['users']
+ideas:
+  label: Ideas
+  route: main_app.admin_ideas
+  icon: cog
+  controllers: ['ideas']
+categories:
+  label: Categories
+  route: main_app.admin_categories
+  icon: cog
+  controllers: ['categories']
+statuses:
+  label: Statuses
+  route: main_app.admin_statuses
+  icon: cog
+  controllers: ['statuses']

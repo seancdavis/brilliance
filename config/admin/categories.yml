@@ -1,0 +1,29 @@
+model: Category
+table:
+  title: Categories
+  scope: all
+  columns:
+    title:
+      heading: Title
+    slug:
+      heading: Slug
+  buttons:
+    new: New Category
+export:
+  button: Export Categories
+  columns:
+    title:
+      label: Title
+    slug:
+      label: Slug
+form:
+  new: &new
+    title: New Category
+    fields:
+      title:
+        type: string
+      slug:
+        type: string
+  edit:
+    <<: *new
+    title: Edit Category
