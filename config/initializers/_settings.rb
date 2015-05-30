@@ -6,13 +6,3 @@ begin
 rescue
   raise "Can't find file: #{config_file}"
 end
-
-# Loads config/private.yml (sensitive settings) into Private
-# OpenStruct
-#
-begin
-  private_file = File.join(Rails.root,'config','private.yml')
-  Private = YAML.load_file(private_file)[Rails.env].to_ostruct
-rescue
-  raise "Can't find file: #{private_file}"
-end
