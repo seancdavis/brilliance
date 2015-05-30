@@ -23,6 +23,11 @@ class User < ActiveRecord::Base
 
   # ------------------------------------------ Plugins
 
+  include PgSearch
+  multisearchable :against => [:name, :email]
+
+  has_paper_trail
+
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
          :validatable
 

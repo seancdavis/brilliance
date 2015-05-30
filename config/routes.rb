@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     get '/logout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
+  # ------------------------------------------ Admin / CMS
+
+  mount Cambium::Engine => '/'
+
   # ------------------------------------------ Comments (PeanutGallery)
 
   namespace :peanut_gallery do
