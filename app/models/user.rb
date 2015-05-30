@@ -42,15 +42,11 @@ class User < ActiveRecord::Base
   # ------------------------------------------ Instance Methods
 
   def to_s
-    email
+    name || email
   end
 
   def admin?
     is_admin?
-  end
-
-  def name
-    email
   end
 
 end

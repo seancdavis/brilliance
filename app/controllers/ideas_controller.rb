@@ -26,7 +26,7 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @current_idea = Idea.new(idea_params)
+    @current_idea = Idea.new(create_params)
     if current_idea.save
       redirect_to ideas_path, :notice => 'Thanks for your idea! You rock!'
     else
@@ -51,6 +51,10 @@ class IdeasController < ApplicationController
       params
         .require(:idea)
         .permit(:title, :desc_md, :category_id, :status_id)
+    end
+
+    def create_params
+      idea_params.merge(:creator => current_user)
     end
 
 end

@@ -1,21 +1,15 @@
 model: Idea
 table:
   title: Ideas
-  scope: all
+  scope: with_includes.by_most_recent
   columns:
     title:
       heading: Title
-    slug:
-      heading: Slug
-    desc_md:
-      heading: Desc Md
-    desc_html:
-      heading: Desc Html
-    category_id:
+    category:
       heading: Category
-    status_id:
+    status:
       heading: Status
-    creator_id:
+    creator:
       heading: Creator
   buttons:
     new: New Idea
@@ -24,17 +18,13 @@ export:
   columns:
     title:
       label: Title
-    slug:
-      label: Slug
     desc_md:
-      label: Desc Md
-    desc_html:
-      label: Desc Html
-    category_id:
+      label: Description
+    category:
       label: Category
-    status_id:
+    status:
       label: Status
-    creator_id:
+    creator:
       label: Creator
 form:
   new: &new
@@ -42,18 +32,18 @@ form:
     fields:
       title:
         type: string
-      slug:
-        type: string
       desc_md:
-        type: text
-      desc_html:
-        type: text
+        label: Description
+        type: markdown
       category_id:
-        type: string
+        type: select
+        options: Category.all
       status_id:
-        type: string
+        type: select
+        options: Status.all
       creator_id:
-        type: string
+        type: select
+        options: User.all
   edit:
     <<: *new
     title: Edit Idea

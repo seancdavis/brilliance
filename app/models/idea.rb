@@ -28,6 +28,7 @@ class Idea < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search_content, :against => [:title, :desc_md]
+  multisearchable :against => [:title, :desc_md]
 
   # ------------------------------------------ Associations
 
@@ -37,7 +38,8 @@ class Idea < ActiveRecord::Base
 
   # ------------------------------------------ Scopes
 
-  scope :empty, -> { where(:title => nil) }
+  scope :with_includes, -> { includes(:category, :status, :creator) }
+  scope :by_most_recent, -> { order('created_at desc') }
 
   # ------------------------------------------ Validations
 
@@ -47,6 +49,10 @@ class Idea < ActiveRecord::Base
 
   def description
     desc_html.html_safe
+  end
+
+  def to_s
+    title
   end
 
 end

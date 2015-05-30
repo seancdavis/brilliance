@@ -13,9 +13,9 @@ Rails.application.routes.draw do
 
   mount Cambium::Engine => '/'
   namespace :admin do
-    resources :statuses
-    resources :categories
-    resources :ideas
+    resources :statuses, :param => :slug
+    resources :categories, :param => :slug
+    resources :ideas, :param => :slug
   end
 
   # ------------------------------------------ Comments (PeanutGallery)

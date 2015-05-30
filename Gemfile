@@ -35,7 +35,7 @@ gem 'kaminari'
 # ------------------------------------------ Utilities
 
 gem 'devise'
-gem 'cambium', '~> 1.1.6'
+gem 'cambium', '~> 1.2.0'
 gem 'paper_trail'
 gem 'pg_search'
 gem 'mark_it_zero', '~> 0.3.0'

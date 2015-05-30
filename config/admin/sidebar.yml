@@ -2,23 +2,28 @@ dashboard:
   label: Dashboard
   route: cambium.admin_dashboard
   icon: dashboard
+ideas:
+  label: Ideas
+  route: main_app.admin_ideas
+  icon: wand
+  controllers: ['ideas']
+categories:
+  label: Categories
+  route: main_app.admin_categories
+  icon: folder
+  controllers: ['categories']
+statuses:
+  label: Statuses
+  route: main_app.admin_statuses
+  icon: notification
+  controllers: ['statuses']
 users:
   label: Users
   route: cambium.admin_users
   icon: users
   controllers: ['users']
-ideas:
-  label: Ideas
-  route: main_app.admin_ideas
-  icon: cog
-  controllers: ['ideas']
-categories:
-  label: Categories
-  route: main_app.admin_categories
-  icon: cog
-  controllers: ['categories']
-statuses:
-  label: Statuses
-  route: main_app.admin_statuses
-  icon: cog
-  controllers: ['statuses']
+back_to_site:
+  label: Back to Site
+  route: main_app.root
+  icon: arrow-left
+  controllers: []

@@ -29,4 +29,10 @@ class Category < ActiveRecord::Base
 
   validates :title, :presence => true
 
+  # ------------------------------------------ Instance Methods
+
+  def to_s
+    title
+  end
+
 end

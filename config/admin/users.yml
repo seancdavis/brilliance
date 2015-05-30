@@ -3,17 +3,12 @@ table:
   title: Site Users
   scope: all
   columns:
+    name:
+      heading: Name
     email:
       heading: Email
   buttons:
     new: New User
-export:
-  button: Export Users
-  columns:
-    name:
-      label: Name
-    email:
-      label: Email
 form:
   new: &new
     title: New User
@@ -22,6 +17,9 @@ form:
         type: string
       email:
         type: string
+      is_admin:
+        label: Admin?
+        type: boolean
       password:
         type: password
       password_confirmation:
