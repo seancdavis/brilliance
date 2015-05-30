@@ -44,6 +44,11 @@ gem 'peanut_gallery', '~> 0.1.0'
 gem 'yaml_db'
 gem 'superslug', '~> 1.2.0'
 
+
+group :production do
+  gem 'rails_12factor'
+end
+
 # ------------------------------------------ Console Helpers
 
 gem 'rails-console-tweaks'
